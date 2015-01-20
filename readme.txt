@@ -46,10 +46,6 @@ For more social media integration, more design options and more features please 
 
 
 
-= Easy and detailed video tutorial: = 
-[youtube https://www.youtube.com/watch?v=TjZNcVG3fDE]
-
-
 = Some Useful Links =
 * <strong>Support Email</strong>: support@accesspressthemes.com
 * <strong>Support Forum Link</strong>: http://accesspressthemes.com/support/

@@ -27,14 +27,14 @@ For more social media integration, more design options and more features please 
 
 = Features: =
 
-* <strong>Beautifully designed 5 themes to select from. More available in Pro versoin.</strong>
-* <strong>Major 7 social media included (Facebook, Twitter, Google+, Instagram, Youtube, Sound Cloud and Dribbble). More available in Pro versoin.</strong>
+* <strong>Beautifully designed 5 themes to select from.</strong> More available in Pro versoin.
+* <strong>Major 7 social media included </strong>(Facebook, Twitter, Google+, Instagram, Youtube, Sound Cloud and Dribbble). More available in Pro versoin.
 * <strong>Latest use of APIs to fetch data</strong>
 * <strong>Auto updates on all APIs</strong>
 * <strong>Option to select which social media profile to show</strong>
 * <strong>Display order for selected social media</strong>
-* <strong>Cache setting - you can set a cache period to avoid frequent API calls</strong>
-* <strong>Fully Responsive - compatible with mobile devices</strong>
+* <strong>Cache setting</strong> - you can set a cache period to avoid frequent API calls
+* <strong>Fully Responsive</strong> - compatible with mobile devices
 * <strong>User friendly and very interactive user interface</strong>
         - Anyone can use it, its as easy as drag and drop.
 * <strong>Upgrades available</strong>

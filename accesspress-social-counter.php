@@ -153,7 +153,7 @@ if (!class_exists('SC_Class')) {
             $apsc_settings = array('social_profile' => array('facebook' => array('page_id' => ''),
                     'twitter' => array('username' => '', 'consumer_key' => '', 'consumer_secret' => '', 'access_token' => '', 'access_token_secret' => ''),
                     'googlePlus' => array('page_id' => '', 'api_key' => ''),
-                    'instagram' => array('username' => '', 'access_token' => ''),
+                    'instagram' => array('username' => '', 'access_token' => '','user_id'=>''),
                     'youtube' => array('username' => '', 'channel_url' => ''),
                     'soundcloud' => array('username' => '', 'client_id' => ''),
                         'dribbble' => array('username' => ''),

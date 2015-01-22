@@ -6,15 +6,15 @@
                 <ul class="apsc-sortable">
                     <?php
                     $social_profiles_ref = array('facebook' => 'Facebook',
-                        'twitter' => 'Twitter',
-                        'googlePlus' => 'Google Plus',
-                        'instagram' => 'Instagram',
-                        'soundcloud' => 'SoundCloud',
-                        'dribbble' => 'Dribbble',
-                        'youtube' => 'Youtube',
-                        'posts' => 'Posts',
-                        'comments' => 'Comments',
-                        );
+                                                 'twitter' => 'Twitter',
+                                                 'googlePlus' => 'Google Plus',
+                                                 'instagram' => 'Instagram',
+                                                 'soundcloud' => 'SoundCloud',
+                                                 'dribbble' => 'Dribbble',
+                                                 'youtube' => 'Youtube',
+                                                 'posts' => 'Posts',
+                                                 'comments' => 'Comments',
+                                                 );
             //$social_profiles = array('facebook','twitter','googlePlus','instagram','soundcloud','dribbble','youtube','posts','comments');
                     $social_profiles = $apsc_settings['profile_order'];
                     foreach ($social_profiles as $social_profile) {

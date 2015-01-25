@@ -5,7 +5,7 @@ $apsc_settings = $this->apsc_settings;
  $cache_period = ($apsc_settings['cache_period'] != '') ? $apsc_settings['cache_period']*60*60 : 24 * 60 * 60;
  
 ?>
-<div class="apsc-icons-wrapper apsc-<?php echo $apsc_settings['social_profile_theme']; ?>" >
+<div class="apsc-icons-wrapper clearfix apsc-<?php echo $apsc_settings['social_profile_theme']; ?>" >
     <?php
     foreach ($apsc_settings['profile_order'] as $social_profile) {
         if (isset($apsc_settings['social_profile'][$social_profile]['active']) && $apsc_settings['social_profile'][$social_profile]['active'] == 1) {

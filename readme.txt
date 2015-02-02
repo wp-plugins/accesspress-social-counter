@@ -4,7 +4,7 @@ Tags: social count, social counter, social counters, social media counters, soci
 Donate link: http://accesspressthemes.com/donation/
 Requires at least: 3.8
 Tested up to: 4.1
-Stable tag: 1.0.1
+Stable tag: 1.0.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -93,6 +93,9 @@ Once you install the plugin , you can check some general documentation about how
 5. Backend Cache Settings Section
 
 == Changelog ==
+= 1.0.2 = 
+* Done number formatting for counts 
+
 = 1.0.1 =
 * Done some fixes for mobile version
  

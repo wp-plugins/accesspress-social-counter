@@ -31,7 +31,7 @@ $apsc_settings = $this->apsc_settings;
                                     $count = 0;
                                 } else {
                                     $body = json_decode($connection['body']);
-                                    $count = $body->likes;
+                                    $count = number_format($body->likes);
                                     set_transient('apsc_facebook', $count, $cache_period);
                                 }
                             } else {
@@ -46,7 +46,7 @@ $apsc_settings = $this->apsc_settings;
                         <?php
                         $twitter_count = get_transient('apsc_twitter');
                         if (false === $twitter_count) {
-                            $count = $this->get_twitter_count();
+                            $count = number_format($this->get_twitter_count());
                             set_transient('apsc_twitter', $count, $cache_period);
                         } else {
                             $count = $twitter_count;
@@ -73,7 +73,7 @@ $apsc_settings = $this->apsc_settings;
                                     $_data = json_decode($connection['body'], true);
 
                                     if (isset($_data['circledByCount'])) {
-                                        $count = intval($_data['circledByCount']);
+                                        $count = number_format(intval($_data['circledByCount']));
                                         set_transient('apsc_googlePlus', $count,$cache_period);
                                     } else {
                                         $count = 0;
@@ -108,7 +108,7 @@ $apsc_settings = $this->apsc_settings;
                                     if (
                                             isset($response['meta']['code']) && 200 == $response['meta']['code'] && isset($response['data']['counts']['followed_by'])
                                     ) {
-                                        $count = intval($response['data']['counts']['followed_by']);
+                                        $count = number_format(intval($response['data']['counts']['followed_by']));
                                         set_transient('apsc_instagram',$count,$cache_period);
                                     } else {
                                         $count = 0;
@@ -140,7 +140,7 @@ $apsc_settings = $this->apsc_settings;
                                 try {
                                     $body = str_replace('yt:', '', $connection['body']);
                                     $xml = @new SimpleXmlElement($body, LIBXML_NOCDATA);
-                                    $count = intval($xml->statistics['subscriberCount']);
+                                    $count = number_format(intval($xml->statistics['subscriberCount']));
                                     set_transient('apsc_youtube',$count,$cache_period);
                                 } catch (Exception $e) {
                                     $count = 0;
@@ -172,7 +172,7 @@ $apsc_settings = $this->apsc_settings;
                                     $response = json_decode($connection['body'], true);
 
                                     if (isset($response['followers_count'])) {
-                                        $count = intval($response['followers_count']);
+                                        $count = number_format(intval($response['followers_count']));
                                         set_transient( 'apsc_soundcloud',$count,$cache_period );
                                     } else {
                                         $count = 0;
@@ -202,7 +202,7 @@ $apsc_settings = $this->apsc_settings;
                                 } else {
                                     $response = json_decode($connection['body'], true);
                                     if (isset($response['followers_count'])) {
-                                        $count = intval($response['followers_count']);
+                                        $count = number_format(intval($response['followers_count']));
                                         set_transient('apsc_dribbble',$count,$cache_period );
                                     } else {
                                         $count = 0;
@@ -234,7 +234,7 @@ $apsc_settings = $this->apsc_settings;
                             $comments_count = get_transient('apsc_comments');
                             if (false === $comments_count) {
                                 $data = wp_count_comments();
-                                $count = $data->approved;
+                                $count = number_format($data->approved);
                                 set_transient('apsc_comments', $count, $cache_period);
                             } else {
                                 $count = $comments_count;

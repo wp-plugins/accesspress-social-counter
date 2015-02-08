@@ -33,23 +33,23 @@
             <div class="apsc-option-field">
                 <label>
                     <input type="radio" name="social_profile_theme" value="theme-1" <?php if($apsc_settings['social_profile_theme']=='theme-1'){?>checked="checked"<?php }?>/><?php _e('Theme 1', 'aps-counter'); ?>
-                    <div class="apsc-theme-image"><img src="<?php echo SC_IMAGE_DIR.'/themes/theme-1.JPG';?>"/></div>
+                    <div class="apsc-theme-image"><img src="<?php echo SC_IMAGE_DIR.'/themes/theme-1.jpg';?>"/></div>
                 </label>
                 <label>
                     <input type="radio" name="social_profile_theme" value="theme-2" <?php if($apsc_settings['social_profile_theme']=='theme-2'){?>checked="checked"<?php }?>/><?php _e('Theme 2', 'aps-counter'); ?>
-                    <div class="apsc-theme-image"><img src="<?php echo SC_IMAGE_DIR.'/themes/theme-2.JPG';?>"/></div>
+                    <div class="apsc-theme-image"><img src="<?php echo SC_IMAGE_DIR.'/themes/theme-2.jpg';?>"/></div>
                 </label>
                 <label>
                     <input type="radio" name="social_profile_theme" value="theme-3" <?php if($apsc_settings['social_profile_theme']=='theme-3'){?>checked="checked"<?php }?>/><?php _e('Theme 3', 'aps-counter'); ?>
-                    <div class="apsc-theme-image"><img src="<?php echo SC_IMAGE_DIR.'/themes/theme-3.JPG';?>"/></div>
+                    <div class="apsc-theme-image"><img src="<?php echo SC_IMAGE_DIR.'/themes/theme-3.jpg';?>"/></div>
                 </label>
                 <label>
                     <input type="radio" name="social_profile_theme" value="theme-4" <?php if($apsc_settings['social_profile_theme']=='theme-4'){?>checked="checked"<?php }?>/><?php _e('Theme 4', 'aps-counter'); ?>
-                    <div class="apsc-theme-image"><img src="<?php echo SC_IMAGE_DIR.'/themes/theme-4.JPG';?>"/></div>
+                    <div class="apsc-theme-image"><img src="<?php echo SC_IMAGE_DIR.'/themes/theme-4.jpg';?>"/></div>
                 </label>
                 <label>
                     <input type="radio" name="social_profile_theme" value="theme-5" <?php if($apsc_settings['social_profile_theme']=='theme-5'){?>checked="checked"<?php }?>/><?php _e('Theme 5', 'aps-counter'); ?>
-                    <div class="apsc-theme-image"><img src="<?php echo SC_IMAGE_DIR.'/themes/theme-5.JPG';?>"/></div>
+                    <div class="apsc-theme-image"><img src="<?php echo SC_IMAGE_DIR.'/themes/theme-5.jpg';?>"/></div>
                 </label>
             </div>
         </div>

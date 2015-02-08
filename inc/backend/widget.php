@@ -30,7 +30,15 @@ class APSC_Widget extends WP_Widget {
         if (!empty($instance['title'])) {
             echo $args['before_title'] . apply_filters('widget_title', $instance['title']) . $args['after_title'];
         }
-        echo do_shortcode('[aps-counter]');
+        if(isset($instance['theme']) && $instance['theme']!='')
+        {
+            echo do_shortcode('[aps-counter theme="'.$instance['theme'].'"]');
+        }
+        else
+        {
+            echo do_shortcode('[aps-counter]');    
+        }
+        
         echo $args['after_widget'];
     }
 
@@ -42,18 +50,26 @@ class APSC_Widget extends WP_Widget {
      * @param array $instance Previously saved values from database.
      */
     public function form($instance) {
-        if (isset($instance['title'])) {
-            $title = $instance['title'];
-        } else {
-            $title = '';
-        }
+        $title = isset($instance['title'])?$instance['title']:'';
+        $theme = isset($instance['theme'])?$instance['theme']:'';
         ?>
         <p>
 
             <label for="<?php echo $this->get_field_id('title'); ?>"><?php _e('Title:', 'aps-counter'); ?></label> 
-            <input class="widefat" id="<?php echo $this->get_field_id('title'); ?>" name="<?php echo $this->get_field_name('title'); ?>" type="text" value="<?php echo esc_attr($title); ?>">
+            <input class="widefat" id="<?php echo $this->get_field_id('title'); ?>" name="<?php echo $this->get_field_name('title'); ?>" type="text" value="<?php echo esc_attr($title); ?>"/>
         </p>
+        <p>
 
+            <label for="<?php echo $this->get_field_id('title'); ?>"><?php _e('Theme:', 'aps-counter'); ?></label> 
+            <select class="widefat" id="<?php echo $this->get_field_id('theme'); ?>" name="<?php echo $this->get_field_name('theme'); ?>" >
+                <option value="">Default</option>
+                <?php for($i=1;$i<=5;$i++){
+                    ?>
+                    <option value="theme-<?php echo $i;?>" <?php selected($theme,'theme-'.$i);?>>Theme <?php echo $i;?></option>
+                    <?php
+                }?>
+            </select>
+        </p>
         <?php
     }
 
@@ -71,6 +87,7 @@ class APSC_Widget extends WP_Widget {
         //die(print_r($new_instance));
         $instance = array();
         $instance['title'] = (!empty($new_instance['title']) ) ? strip_tags($new_instance['title']) : '';
+        $instance['theme'] = (!empty($new_instance['theme']) ) ? strip_tags($new_instance['theme']) : '';
         return $instance;
     }
 

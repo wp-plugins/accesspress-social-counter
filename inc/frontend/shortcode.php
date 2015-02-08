@@ -2,8 +2,8 @@
 defined('ABSPATH') or die("No script kiddies please!");
 
 $apsc_settings = $this->apsc_settings;
- $cache_period = ($apsc_settings['cache_period'] != '') ? $apsc_settings['cache_period']*60*60 : 24 * 60 * 60;
- 
+$cache_period = ($apsc_settings['cache_period'] != '') ? $apsc_settings['cache_period']*60*60 : 24 * 60 * 60;
+$apsc_settings['social_profile_theme'] = isset($atts['theme'])?$atts['theme']:$apsc_settings['social_profile_theme']; 
 ?>
 <div class="apsc-icons-wrapper clearfix apsc-<?php echo $apsc_settings['social_profile_theme']; ?>" >
     <?php
@@ -37,7 +37,7 @@ $apsc_settings = $this->apsc_settings;
                             } else {
                                 $count = $facebook_count;
                             }
-                            ?><span class="apsc-count"><?php echo $count; ?></span><span class="apsc-media-type">Fan</span></div></a>
+                            ?><span class="apsc-count"><?php echo $count; ?></span><span class="apsc-media-type">Fans</span></div></a>
                             <?php
                             break;
                         case 'twitter':

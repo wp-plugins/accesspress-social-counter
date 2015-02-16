@@ -1,6 +1,15 @@
 .apsc-add-set-wrapper {
-    max-width: 980px;
+	float:left;
 }
+.apsc-add-set-wrapper.clearfix:before,
+.apsc-add-set-wrapper.clearfix:after{
+	content:"";
+	display:table;
+}
+.apsc-add-set-wrapper.clearfix:after{
+clear:both;
+}
+
 .apsc-settings-wrapper {
 
 }
@@ -708,5 +717,22 @@ padding: 1px 12px;
 
 #apsc-board-display-settings .apsc-option-field {
 	display:block;
+}
+.apsc-panel{
+	float:left;
+	width:810px;
+}
+.apsc-promoFloat{
+	background: #f1f1f1;
+	float: left;
+	width: 311px;
+	padding: 10px;
+}
+.apsc-promo-buttons{
+	padding:20px 0;
+	text-align:center;
+}
+.apsc-promo-buttons a{
+	display:inline-block;
 }
 

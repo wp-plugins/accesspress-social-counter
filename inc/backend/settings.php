@@ -106,7 +106,7 @@ $apsc_settings = $this->apsc_settings;
 <div class="apsc-promoFloat">
         <img src="<?php echo SC_IMAGE_DIR . '/promo-top.png' ?>" alt="promo-top" />
         <div class="apsc-promo-buttons"><a href="http://accesspressthemes.com/demo/wordpress-plugins/accesspress-social-pro"  target="_blank"><img src="<?php echo SC_IMAGE_DIR . '/demo-btn.png' ?>" alt="demo link" /></a><a href="http://codecanyon.net/item/accesspress-social-pro/10429645?ref=AccessKeys" target="_blank"><img src="<?php echo SC_IMAGE_DIR . '/upgrade-btn.png' ?>" alt="upgrade link" /></a></div>
-        <img src="<?php echo SC_IMAGE_DIR . '/promo-top.png' ?>" alt="promo-bottom" />
+        <img src="<?php echo SC_IMAGE_DIR . '/promo-bottom.png' ?>" alt="promo-bottom" />
         <div class="apsc-promo-buttons"><a href="http://accesspressthemes.com/demo/wordpress-plugins/accesspress-social-pro"  target="_blank"><img src="<?php echo SC_IMAGE_DIR . '/demo-btn.png' ?>" alt="demo link" /></a><a href="http://codecanyon.net/item/accesspress-social-pro/10429645?ref=AccessKeys"  target="_blank"><img src="<?php echo SC_IMAGE_DIR . '/upgrade-btn.png' ?>" alt="upgrade link" /></a></div>
     </div>
     <div class="clear"></div>

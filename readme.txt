@@ -48,18 +48,22 @@ Just get it done in a few minutes!
         - Get free updates for lifetime.
 
 = Premium Features: =
-	★ Major 18 social media included(Facebook, Twitter, Google+,
-	 Instagram, SoundCloud, Dribbble, Youtube, Steam, Vimeo,
-	 Pinterest, Forrst, VK, Flickr, Behance, Github, Envato,
-	 Posts, Comments)
+	★ Major 18 social media included(Facebook, Twitter, Google+, Instagram,
+	 SoundCloud, Dribbble, Youtube, Steam, Vimeo, Pinterest, Forrst, VK,
+	 Flickr, Behance, Github, Envato,Posts, Comments)
+
 	★ Beautifully designed 20 themes to select from.
+
 	★ 5 soothing animations
+
 	★ Floating Sidebar with 5 beautiful themes
-	★ Different Social Media Sharing Options with 10 
-	pre available themes
-	★ Floating Social Sharing Sidebar with 4 pre available
-	 themes
+
+	★ Different Social Media Sharing Options with 10 pre available themes
+
+	★ Floating Social Sharing Sidebar with 4 pre available themes
+
 	★ Pinterest Sharing Options
+
 	★ Popup sharing and many more...
 
 = Premium Upgrade = 

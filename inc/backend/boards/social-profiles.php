@@ -38,28 +38,28 @@
                     <label><?php _e('Twitter Consumer Key', 'aps-counter'); ?></label>
                     <div class="apsc-option-field">
                         <input type="text" name="social_profile[twitter][consumer_key]" value="<?php echo $apsc_settings['social_profile']['twitter']['consumer_key'];?>"/>
-                        <div class="apsc-option-note"><?php _e('Please create an app on Twitter through this link:', 'aps-counter'); ?><a href="https://dev.twitter.com/apps" target="_blank">https://dev.twitter.com/apps</a><?php _e('And get this information.'); ?></div>
+                        <div class="apsc-option-note"><?php _e('Please create an app on Twitter through this link:', 'aps-counter'); ?><a href="https://dev.twitter.com/apps" target="_blank">https://dev.twitter.com/apps</a><?php _e(' and get this information.'); ?></div>
                     </div>
                 </div>
                 <div class="apsc-option-inner-wrapper">
                     <label><?php _e('Twitter Consumer Secret', 'aps-counter'); ?></label>
                     <div class="apsc-option-field">
                         <input type="text" name="social_profile[twitter][consumer_secret]" value="<?php echo $apsc_settings['social_profile']['twitter']['consumer_secret'];?>"/>
-                        <div class="apsc-option-note"><?php _e('Please create an app on Twitter through this link:', 'aps-counter'); ?><a href="https://dev.twitter.com/apps" target="_blank">https://dev.twitter.com/apps </a><?php _e('And get this information.'); ?></div>
+                        <div class="apsc-option-note"><?php _e('Please create an app on Twitter through this link:', 'aps-counter'); ?><a href="https://dev.twitter.com/apps" target="_blank">https://dev.twitter.com/apps </a><?php _e(' and get this information.'); ?></div>
                     </div>
                 </div>
                 <div class="apsc-option-inner-wrapper">
                     <label><?php _e('Twitter Access Token', 'aps-counter'); ?></label>
                     <div class="apsc-option-field">
                         <input type="text" name="social_profile[twitter][access_token]" value="<?php echo $apsc_settings['social_profile']['twitter']['access_token'];?>"/>
-                        <div class="apsc-option-note"><?php _e('Please create an app on Twitter through this link:', 'aps-counter'); ?><a href="https://dev.twitter.com/apps" target="_blank">https://dev.twitter.com/apps </a><?php _e('And get this information.'); ?></div>
+                        <div class="apsc-option-note"><?php _e('Please create an app on Twitter through this link:', 'aps-counter'); ?><a href="https://dev.twitter.com/apps" target="_blank">https://dev.twitter.com/apps </a><?php _e(' and get this information.'); ?></div>
                     </div>
                 </div>
                 <div class="apsc-option-inner-wrapper">
                     <label><?php _e('Twitter Access Token Secret', 'aps-counter'); ?></label>
                     <div class="apsc-option-field">
                         <input type="text" name="social_profile[twitter][access_token_secret]" value="<?php echo $apsc_settings['social_profile']['twitter']['access_token_secret'];?>"/>
-                        <div class="apsc-option-note"><?php _e('Please create an app on Twitter through this link:', 'aps-counter'); ?><a href="https://dev.twitter.com/apps" target="_blank">https://dev.twitter.com/apps </a><?php _e('And get this information.'); ?></div>
+                        <div class="apsc-option-note"><?php _e('Please create an app on Twitter through this link:', 'aps-counter'); ?><a href="https://dev.twitter.com/apps" target="_blank">https://dev.twitter.com/apps </a><?php _e(' and get this information.'); ?></div>
                     </div>
                 </div>
 

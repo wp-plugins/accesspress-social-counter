@@ -4,7 +4,7 @@ Tags: social count, social counter, social counters, social media counters, soci
 Donate link: http://accesspressthemes.com/donation/
 Requires at least: 3.8
 Tested up to: 4.1
-Stable tag: 1.0.5
+Stable tag: 1.0.6
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -22,10 +22,11 @@ The available social media in FREE version are: Facebook, Twitter, Google+, Inst
 
 Just get it done in a few minutes! 
 
-For more social media integration, more design options and more features please upgrade to Premium version. 
+`For more social media integration, more design options, floating sidebar options,social sharing options, pinterest sharing options and more features please upgrade to Premium version.`
+ 
 
 
-= Features: =
+= Free Features: =
 
 * <strong>Beautifully designed 5 themes to select from.</strong> More available in Pro versoin.
 * <strong>Major 7 social media included </strong>(Facebook, Twitter, Google+, Instagram, Youtube, Sound Cloud and Dribbble). More available in Pro versoin.
@@ -44,7 +45,15 @@ For more social media integration, more design options and more features please 
 * <strong>Free updates</strong>
         - Get free updates for lifetime.
 
-
+= Premium Features: =
+* <strong>Major 18 social media included</strong>(Facebook, Twitter, Google+, Instagram, SoundCloud, Dribbble, Youtube, Steam, Vimeo, Pinterest, Forrst, VK, Flickr, Behance, Github, Envato, Posts, Comments)
+* <strong>Beautifully designed 20 themes to select from.</strong>
+* <strong>5 soothing animations</strong>
+* <strong>Floating Sidebar</strong> with 5 beautiful themes
+* <strong>Different Social Media Sharing Options</strong> with 10 pre available themes
+* <strong>Floating Social Sharing Sidebar</strong> with 4 pre available themes
+* <strong>Pinterest Sharing Options</strong>
+* <strong>Popup sharing and many more...</strong>
 
 = Some Useful Links =
 * <strong>Support Email</strong>: support@accesspressthemes.com
@@ -93,6 +102,9 @@ Once you install the plugin , you can check some general documentation about how
 5. Backend Cache Settings Section
 
 == Changelog ==
+= 1.0.6 = 
+* Done few changes in backend social profiles
+
 = 1.0.5 =
 * Done small update in upgrade banner
 

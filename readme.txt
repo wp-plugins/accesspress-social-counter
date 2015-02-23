@@ -1,4 +1,4 @@
-=== AccessPress Social Counter ===
+﻿=== AccessPress Social Counter ===
 Contributors: Access Keys
 Tags: social count, social counter, social counters, social media counters, social media, social network, social profiles counter, social profile count, social profile, social icons, social icon counter
 Donate link: http://accesspressthemes.com/donation/
@@ -22,7 +22,9 @@ The available social media in FREE version are: Facebook, Twitter, Google+, Inst
 
 Just get it done in a few minutes! 
 
-`For more social media integration, more design options, floating sidebar options,social sharing options, pinterest sharing options and more features please upgrade to Premium version.`
+`For more social media integration, more design options, floating sidebar
+ options,social sharing options, pinterest sharing options and more
+ features please upgrade to Premium version.`
  
 
 
@@ -46,16 +48,21 @@ Just get it done in a few minutes!
         - Get free updates for lifetime.
 
 = Premium Features: =
-* <strong>Major 18 social media included</strong>(Facebook, Twitter, Google+, Instagram, SoundCloud, Dribbble, Youtube, Steam, Vimeo, Pinterest, Forrst, VK, Flickr, Behance, Github, Envato, Posts, Comments)
-* <strong>Beautifully designed 20 themes to select from.</strong>
-* <strong>5 soothing animations</strong>
-* <strong>Floating Sidebar</strong> with 5 beautiful themes
-* <strong>Different Social Media Sharing Options</strong> with 10 pre available themes
-* <strong>Floating Social Sharing Sidebar</strong> with 4 pre available themes
-* <strong>Pinterest Sharing Options</strong>
-* <strong>Popup sharing and many more...</strong>
+	★ Major 18 social media included(Facebook, Twitter, Google+,
+	 Instagram, SoundCloud, Dribbble, Youtube, Steam, Vimeo,
+	 Pinterest, Forrst, VK, Flickr, Behance, Github, Envato,
+	 Posts, Comments)
+	★ Beautifully designed 20 themes to select from.
+	★ 5 soothing animations
+	★ Floating Sidebar with 5 beautiful themes
+	★ Different Social Media Sharing Options with 10 
+	pre available themes
+	★ Floating Social Sharing Sidebar with 4 pre available
+	 themes
+	★ Pinterest Sharing Options
+	★ Popup sharing and many more...
 
-= Premium Upgrade
+= Premium Upgrade = 
 * For premium upgrade, please go [here](https://accesspressthemes.com/wordpress-plugins/accesspress-social-pro/)
 
 = Some Useful Links =

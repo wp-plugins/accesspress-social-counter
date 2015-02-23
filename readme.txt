@@ -23,8 +23,8 @@ The available social media in FREE version are: Facebook, Twitter, Google+, Inst
 Just get it done in a few minutes! 
 
 `For more social media integration, more design options, floating sidebar
- options,social sharing options, pinterest sharing options and more
- features please upgrade to Premium version.`
+options,social sharing options, pinterest sharing options and more
+features please upgrade to Premium version.`
  
 
 

@@ -55,6 +55,9 @@ Just get it done in a few minutes!
 * <strong>Pinterest Sharing Options</strong>
 * <strong>Popup sharing and many more...</strong>
 
+= Premium Upgrade
+* For premium upgrade, please go [here](https://accesspressthemes.com/wordpress-plugins/accesspress-social-pro/)
+
 = Some Useful Links =
 * <strong>Support Email</strong>: support@accesspressthemes.com
 * <strong>Support Forum Link</strong>: http://accesspressthemes.com/support/
@@ -71,6 +74,8 @@ For complete information and documentation regarding plugin,please visit below l
 [Plugin information](https://accesspressthemes.com/wordpress-plugins/accesspress-social-counter/)
 
 [Docs](https://accesspressthemes.com/documentation/documentation-plugin-instruction-accesspress-social-counter/ )
+
+[Demo](http://accesspressthemes.com/demo/wordpress-plugins/accesspress-social-counter/)
 
 == Installation ==
 1. Unzip accesspress-social-counter.zip

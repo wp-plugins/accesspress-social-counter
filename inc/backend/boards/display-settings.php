@@ -53,5 +53,19 @@
                 </label>
             </div>
         </div>
+        <div class="apsc-option-inner-wrapper">
+          <label><?php _e('Counter Format','aps-counter');?></label>
+          <div class="apsc-option-field">
+            <label>
+              <input type="radio" name="counter_format" value="default" <?php if(isset($apsc_settings['counter_format'])){checked($apsc_settings['counter_format'],'default');}?> checked="checked"/>12200
+            </label>
+            <label>
+              <input type="radio" name="counter_format" value="comma" <?php if(isset($apsc_settings['counter_format'])){ checked($apsc_settings['counter_format'],'comma');}?>/>12,200
+            </label>
+            <label>
+              <input type="radio" name="counter_format" value="short" <?php if(isset($apsc_settings['counter_format'])){ checked($apsc_settings['counter_format'],'short');}?>/>12.2K
+            </label>
+          </div>  
+        </div>
     </div>
 </div>

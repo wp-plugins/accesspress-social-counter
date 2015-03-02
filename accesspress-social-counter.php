@@ -5,7 +5,7 @@ defined('ABSPATH') or die("No script kiddies please!");
  * Plugin Name: AccessPress Social Counter
  * Plugin URI: https://accesspressthemes.com/wordpress-plugins/accesspress-social-counter/
  * Description: A plugin to display your social accounts fans, subscribers and followers number on your website with handful of backend settings and interface. 
- * Version: 1.0.6
+ * Version: 1.0.7
  * Author: AccessPress Themes
  * Author URI: http://accesspressthemes.com
  * Text Domain: aps-counter
@@ -26,7 +26,7 @@ if (!defined('SC_CSS_DIR')) {
     define('SC_CSS_DIR', plugin_dir_url(__FILE__) . 'css');
 }
 if (!defined('SC_VERSION')) {
-    define('SC_VERSION', '1.0.6');
+    define('SC_VERSION', '1.0.7');
 }
 /**
  * Register of widgets
@@ -160,6 +160,7 @@ if (!class_exists('SC_Class')) {
                 ),
                 'profile_order' => array('facebook', 'twitter', 'googlePlus', 'instagram', 'youtube', 'soundcloud', 'dribbble', 'posts', 'comments'),
                 'social_profile_theme' => 'theme-1',
+                'counter_format'=>'comma',
                 'cache_period' => ''
             );
             return $apsc_settings;
@@ -313,6 +314,44 @@ if (!class_exists('SC_Class')) {
             }
             return $count;
         }
+        
+        /**
+         * 
+         * @param int $count
+         * @param string $format
+         */
+        function get_formatted_count($count, $format) {
+            switch ($format) {
+                case 'comma':
+                    $count = number_format($count);
+                    break;
+                case 'short':
+                    $count = $this->abreviateTotalCount($count);
+                    break;
+                default:
+                    break;
+            }
+            return $count;
+        }
+         
+         /**
+         * 
+         * @param integer $value
+         * @return string
+         */
+        function abreviateTotalCount($value) {
+
+            $abbreviations = array(12 => 'T', 9 => 'B', 6 => 'M', 3 => 'K', 0 => '');
+
+            foreach ($abbreviations as $exponent => $abbreviation) {
+
+                if ($value >= pow(10, $exponent)) {
+
+                    return round(floatval($value / pow(10, $exponent)), 1) . $abbreviation;
+                }
+            }
+        }
+
 
     }
 

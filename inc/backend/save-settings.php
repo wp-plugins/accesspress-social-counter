@@ -81,6 +81,7 @@ $apsc_settings['social_profile'] = $social_profile;
 $apsc_settings['profile_order'] = $profile_order;
 $apsc_settings['cache_period'] = $cache_period;
 $apsc_settings['social_profile_theme'] = $social_profile_theme;
+$apsc_settings['counter_format'] = $counter_format;
 update_option('apsc_settings', $apsc_settings);
 $_SESSION['apsc_message'] = __('Settings Saved Successfully');
 wp_redirect(admin_url().'admin.php?page=ap-social-counter');

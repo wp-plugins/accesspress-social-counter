@@ -4,6 +4,7 @@ defined('ABSPATH') or die("No script kiddies please!");
 $apsc_settings = $this->apsc_settings;
 $cache_period = ($apsc_settings['cache_period'] != '') ? $apsc_settings['cache_period']*60*60 : 24 * 60 * 60;
 $apsc_settings['social_profile_theme'] = isset($atts['theme'])?$atts['theme']:$apsc_settings['social_profile_theme']; 
+$format = isset($apsc_settings['counter_format'])?$apsc_settings['counter_format']:'comma';
 ?>
 <div class="apsc-icons-wrapper clearfix apsc-<?php echo $apsc_settings['social_profile_theme']; ?>" >
     <?php
@@ -31,12 +32,13 @@ $apsc_settings['social_profile_theme'] = isset($atts['theme'])?$atts['theme']:$a
                                     $count = 0;
                                 } else {
                                     $body = json_decode($connection['body']);
-                                    $count = number_format($body->likes);
+                                    $count = ($body->likes);
                                     set_transient('apsc_facebook', $count, $cache_period);
                                 }
                             } else {
                                 $count = $facebook_count;
                             }
+                            $count = $this->get_formatted_count($count,$format);
                             ?><span class="apsc-count"><?php echo $count; ?></span><span class="apsc-media-type">Fans</span></div></a>
                             <?php
                             break;
@@ -46,11 +48,12 @@ $apsc_settings['social_profile_theme'] = isset($atts['theme'])?$atts['theme']:$a
                         <?php
                         $twitter_count = get_transient('apsc_twitter');
                         if (false === $twitter_count) {
-                            $count = number_format($this->get_twitter_count());
+                            $count = ($this->get_twitter_count());
                             set_transient('apsc_twitter', $count, $cache_period);
                         } else {
                             $count = $twitter_count;
                         }
+                        $count = $this->get_formatted_count($count,$format);
                         ?><span class="apsc-count"><?php echo $count; ?></span><span class="apsc-media-type">Followers</span></div></a><?php
                         break;
                     case 'googlePlus':
@@ -73,7 +76,7 @@ $apsc_settings['social_profile_theme'] = isset($atts['theme'])?$atts['theme']:$a
                                     $_data = json_decode($connection['body'], true);
 
                                     if (isset($_data['circledByCount'])) {
-                                        $count = number_format(intval($_data['circledByCount']));
+                                        $count = (intval($_data['circledByCount']));
                                         set_transient('apsc_googlePlus', $count,$cache_period);
                                     } else {
                                         $count = 0;
@@ -82,6 +85,7 @@ $apsc_settings['social_profile_theme'] = isset($atts['theme'])?$atts['theme']:$a
                             } else {
                                 $count = $googlePlus_count;
                             }
+                            $count = $this->get_formatted_count($count,$format);
                             ?><span class="apsc-count"><?php echo $count; ?></span><span class="apsc-media-type">Followers</span></div></a><?php
                             break;
                         case 'instagram':
@@ -108,7 +112,7 @@ $apsc_settings['social_profile_theme'] = isset($atts['theme'])?$atts['theme']:$a
                                     if (
                                             isset($response['meta']['code']) && 200 == $response['meta']['code'] && isset($response['data']['counts']['followed_by'])
                                     ) {
-                                        $count = number_format(intval($response['data']['counts']['followed_by']));
+                                        $count = (intval($response['data']['counts']['followed_by']));
                                         set_transient('apsc_instagram',$count,$cache_period);
                                     } else {
                                         $count = 0;
@@ -117,6 +121,7 @@ $apsc_settings['social_profile_theme'] = isset($atts['theme'])?$atts['theme']:$a
                             } else {
                                 $count = $instagram_count;
                             }
+                            $count = $this->get_formatted_count($count,$format);
                             ?>
                             <span class="apsc-count"><?php echo $count; ?></span><span class="apsc-media-type">Followers</span></div></a>
                             <?php
@@ -140,7 +145,7 @@ $apsc_settings['social_profile_theme'] = isset($atts['theme'])?$atts['theme']:$a
                                 try {
                                     $body = str_replace('yt:', '', $connection['body']);
                                     $xml = @new SimpleXmlElement($body, LIBXML_NOCDATA);
-                                    $count = number_format(intval($xml->statistics['subscriberCount']));
+                                    $count = (intval($xml->statistics['subscriberCount']));
                                     set_transient('apsc_youtube',$count,$cache_period);
                                 } catch (Exception $e) {
                                     $count = 0;
@@ -149,6 +154,7 @@ $apsc_settings['social_profile_theme'] = isset($atts['theme'])?$atts['theme']:$a
                         } else {
                             $count = $youtube_count;
                         }
+                        $count = $this->get_formatted_count($count,$format);
                         ?><span class="apsc-count"><?php echo $count; ?></span><span class="apsc-media-type">Subscriber</span></div></a><?php
                             break;
                         case 'soundcloud':
@@ -172,7 +178,7 @@ $apsc_settings['social_profile_theme'] = isset($atts['theme'])?$atts['theme']:$a
                                     $response = json_decode($connection['body'], true);
 
                                     if (isset($response['followers_count'])) {
-                                        $count = number_format(intval($response['followers_count']));
+                                        $count = (intval($response['followers_count']));
                                         set_transient( 'apsc_soundcloud',$count,$cache_period );
                                     } else {
                                         $count = 0;
@@ -181,6 +187,7 @@ $apsc_settings['social_profile_theme'] = isset($atts['theme'])?$atts['theme']:$a
                             } else {
                                 $count = $soundcloud_count;
                             }
+                            $count = $this->get_formatted_count($count,$format);
                             ?><span class="apsc-count"><?php echo $count; ?></span><span class="apsc-media-type">Followers</span></div></a><?php
                             break;
                         case 'dribbble':
@@ -202,7 +209,7 @@ $apsc_settings['social_profile_theme'] = isset($atts['theme'])?$atts['theme']:$a
                                 } else {
                                     $response = json_decode($connection['body'], true);
                                     if (isset($response['followers_count'])) {
-                                        $count = number_format(intval($response['followers_count']));
+                                        $count = (intval($response['followers_count']));
                                         set_transient('apsc_dribbble',$count,$cache_period );
                                     } else {
                                         $count = 0;
@@ -211,6 +218,7 @@ $apsc_settings['social_profile_theme'] = isset($atts['theme'])?$atts['theme']:$a
                             } else {
                                 $count = $dribbble_count;
                             }
+                            $count = $this->get_formatted_count($count,$format);
                             ?><span class="apsc-count"><?php echo $count; ?></span><span class="apsc-media-type">Followers</span></div></a><?php
                             break;
                         case 'posts':
@@ -225,6 +233,7 @@ $apsc_settings['social_profile_theme'] = isset($atts['theme'])?$atts['theme']:$a
                             } else {
                                 $count = $posts_count;
                             }
+                            $count = $this->get_formatted_count($count,$format);
                             ?><span class="apsc-count"><?php echo $count; ?></span><span class="apsc-media-type">Post</span></div></a><?php
                             break;
                         case 'comments':
@@ -234,11 +243,12 @@ $apsc_settings['social_profile_theme'] = isset($atts['theme'])?$atts['theme']:$a
                             $comments_count = get_transient('apsc_comments');
                             if (false === $comments_count) {
                                 $data = wp_count_comments();
-                                $count = number_format($data->approved);
+                                $count = ($data->approved);
                                 set_transient('apsc_comments', $count, $cache_period);
                             } else {
                                 $count = $comments_count;
                             }
+                            $count = $this->get_formatted_count($count,$format);
                             ?><span class="apsc-count"><?php echo $count; ?></span><span class="apsc-media-type">Comments</span></div></a><?php
                             break;
                         default:

@@ -32,7 +32,7 @@ $apsc_settings = $this->apsc_settings;
                     </div>
                 </div>
 
-                <div class="apsc-title"><?php _e('AccessPress Social Counter', 'anonymous-post'); ?></div>
+                <div class="apsc-title"><?php _e('AccessPress Social Counter', 'aps-counter'); ?></div>
             </div>
             <?php if(isset($_SESSION['apsc_message'])){?><div class="apsc-success-message"><p><?php echo $_SESSION['apsc_message'];unset($_SESSION['apsc_message']);?></p></div><?php }?>
             <div class="apsc-boards-wrapper">

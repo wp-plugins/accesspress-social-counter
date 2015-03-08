@@ -223,7 +223,7 @@ $format = isset($apsc_settings['counter_format'])?$apsc_settings['counter_format
                             break;
                         case 'posts':
                             ?>
-                        <a class="apsc-edit-icon clearfix" href="javascript:void(0);" target="_blank"><div class="apsc-inner-block"><span class="social-icon"><i class="apsc-posts fa fa-edit"></i><span class="media-name">Post</span></span>
+                        <a class="apsc-edit-icon clearfix" href="javascript:void(0);"><div class="apsc-inner-block"><span class="social-icon"><i class="apsc-posts fa fa-edit"></i><span class="media-name">Post</span></span>
                             <?php
                             $posts_count = get_transient('apsc_posts');
                             if (false === $posts_count) {
@@ -238,7 +238,7 @@ $format = isset($apsc_settings['counter_format'])?$apsc_settings['counter_format
                             break;
                         case 'comments':
                             ?>
-                        <a class="apsc-comment-icon clearfix" href="javascript:void(0);" target="_blank"><div class="apsc-inner-block"><span class="social-icon"><i class="apsc-comments fa fa-comments"></i><span class="media-name">Comment</span></span>
+                        <a class="apsc-comment-icon clearfix" href="javascript:void(0);"><div class="apsc-inner-block"><span class="social-icon"><i class="apsc-comments fa fa-comments"></i><span class="media-name">Comment</span></span>
                             <?php
                             $comments_count = get_transient('apsc_comments');
                             if (false === $comments_count) {

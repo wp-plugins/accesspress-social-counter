@@ -23,7 +23,7 @@ The available social media in FREE version are: Facebook, Twitter, Google+, Inst
 					
 						<h3>Other products by AccessPress themes </h3>
 						<div class="product">
-						<div class="logo-product"><img src="<?php echo SC_IMAGE_DIR;?>/aplite.png" alt="<?php esc_attr_e('AccessPress Anonymous Post','aps-counter'); ?>" /></div>
+						<div class="logo-product"><img src="<?php echo SC_IMAGE_DIR;?>/aplite.png" alt="<?php esc_attr_e('AccessPress Social Counter','aps-counter'); ?>" /></div>
 						<div class="productext"><p><strong>AccessPress Lite</strong> - A very popular Free WordPress theme, available in WordPress.org<br />
 							<a href="http://accesspressthemes.com/wordpress-themes/accesspress-lite/" target="_blank">http://accesspressthemes.com/wordpress-themes/accesspress-lite/</a></p>
 						</div>

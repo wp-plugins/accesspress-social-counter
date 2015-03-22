@@ -12,7 +12,7 @@
                     <label><?php _e('Facebook Page ID', 'aps-counter'); ?></label>
                     <div class="apsc-option-field">
                         <input type="text" name="social_profile[facebook][page_id]" value="<?php echo $apsc_settings['social_profile']['facebook']['page_id'];?>"/>
-                        <div class="apsc-option-note"><?php _e('Please enter the page ID or page name.For example:If your page url is https://www.facebook.com/AccessPressThemes then your page ID is AccessPressThemes', 'aps-counter'); ?></div>
+                        <div class="apsc-option-note"><?php _e('Please enter the page ID or page name.For example:If your page url is https://www.facebook.com/AccessPressThemes then your page ID is AccessPressThemes.You can also find your Facebook Page ID from <a href="http://findmyfacebookid.com/" target="_blank">http://findmyfacebookid.com/</a>', 'aps-counter'); ?></div>
                     </div>
                 </div>
             </div>

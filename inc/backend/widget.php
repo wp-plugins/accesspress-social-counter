@@ -10,7 +10,7 @@ class APSC_Widget extends WP_Widget {
      */
     function __construct() {
         parent::__construct(
-                'aps_widget', // Base ID
+                'apsc_widget', // Base ID
                 __('AccessPress Social Counter', 'aps-counter'), // Name
                 array('description' => __('AccessPress Social Counter Widget', 'aps-counter')) // Args
         );

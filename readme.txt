@@ -4,7 +4,7 @@ Tags: social count, social counter, social counters, social media counters, soci
 Donate link: http://accesspressthemes.com/donation/
 Requires at least: 3.8
 Tested up to: 4.1
-Stable tag: 1.1.0
+Stable tag: 1.1.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -69,6 +69,13 @@ features please upgrade to Premium version.`
 = Premium Upgrade = 
 * For premium upgrade, please go [here](https://accesspressthemes.com/wordpress-plugins/accesspress-social-pro/)
 
+= Available Languages = 
+* English
+* Serbo-Croatian
+
+= Translators = 
+* Serbo-Croatian - Borisa Djuraskovic ( http://www.webhostinghub.com )
+
 = Some Useful Links =
 * <strong>Support Email</strong>: support@accesspressthemes.com
 * <strong>Support Forum Link</strong>: http://accesspressthemes.com/support/
@@ -118,6 +125,9 @@ Once you install the plugin , you can check some general documentation about how
 5. Backend Cache Settings Section
 
 == Changelog ==
+= 1.1.1 = 
+* Added Serbo-Croatian Language
+
 = 1.1.0 = 
 * Fixed the widget ID conflict 
 * Updated Facebook Counter Description in backend

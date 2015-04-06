@@ -241,7 +241,6 @@
 .apsc-theme-3 .apsc-each-profile {
     float: left;
     margin: 5px;
-    width: 100%;
 }
 
 .apsc-theme-3 .social-icon {
@@ -256,7 +255,6 @@
     -moz-transition: all 0.5s ease-in-out;
     -o-transition:all 0.5s ease-in-out;
     -ms-transition: all 0.5s ease-in-out;
-    width: 83%;
 }
 
 .apsc-theme-3 .apsc-each-profile a{

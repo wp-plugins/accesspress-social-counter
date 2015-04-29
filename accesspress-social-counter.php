@@ -3,7 +3,7 @@
  * Plugin Name: AccessPress Social Counter
  * Plugin URI: https://accesspressthemes.com/wordpress-plugins/accesspress-social-counter/
  * Description: A plugin to display your social accounts fans, subscribers and followers number on your website with handful of backend settings and interface. 
- * Version: 1.1.4
+ * Version: 1.1.5
  * Author: AccessPress Themes
  * Author URI: http://accesspressthemes.com
  * Text Domain: aps-counter

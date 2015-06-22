@@ -736,3 +736,11 @@ padding: 1px 12px;
 	display:inline-block;
 }
 
+.apsc-extra-note {
+  background-color: #FFFBCC;
+  padding: 10px;
+  font-style: italic;
+  font-size: 15px;
+  margin-bottom: 25px;
+  margin-top: -10px;
+}

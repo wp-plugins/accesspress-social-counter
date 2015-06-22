@@ -22,19 +22,11 @@ $format = isset($apsc_settings['counter_format'])?$apsc_settings['counter_format
                             $facebook_count = get_transient('apsc_facebook');
                             if (false === $facebook_count) {
 
-                                $api_url = 'http://graph.facebook.com/' . $facebook_page_id;
-                                $params = array(
-                                    'sslverify' => false,
-                                    'timeout' => 60
-                                );
-                                $connection = wp_remote_get($api_url, $params);
-                                if (is_wp_error($connection)) {
-                                    $count = 0;
-                                } else {
-                                    $body = json_decode($connection['body']);
-                                    $count = ($body->likes);
+                                $api_url = 'https://www.facebook.com/' . $facebook_page_id;
+                                
+                                    $count = $this->facebook_count($api_url);
                                     set_transient('apsc_facebook', $count, $cache_period);
-                                }
+                                
                             } else {
                                 $count = $facebook_count;
                             }
@@ -131,30 +123,8 @@ $format = isset($apsc_settings['counter_format'])?$apsc_settings['counter_format
                             ?>
                         <a class="apsc-youtube-icon clearfix" href="<?php echo $social_profile_url; ?>" target="_blank"><div class="apsc-inner-block"><span class="social-icon"><i class="apsc-youtube fa fa-youtube"></i><span class="media-name">Youtube</span></span>
                         <?php
-                        $youtube_count = get_transient('apsc_youtube');
-                        if (false === $youtube_count) {
-                            $api_url = 'https://gdata.youtube.com/feeds/api/users/' . $apsc_settings['social_profile']['youtube']['username'];
-                            $params = array(
-                                'sslverify' => false,
-                                'timeout' => 60
-                            );
-                            $connection = wp_remote_get($api_url, $params);
-                            if (is_wp_error($connection)) {
-                                $count = 0;
-                            } else {
-                                try {
-                                    $body = str_replace('yt:', '', $connection['body']);
-                                    $xml = @new SimpleXmlElement($body, LIBXML_NOCDATA);
-                                    $count = (intval($xml->statistics['subscriberCount']));
-                                    set_transient('apsc_youtube',$count,$cache_period);
-                                } catch (Exception $e) {
-                                    $count = 0;
-                                }
-                            }
-                        } else {
-                            $count = $youtube_count;
-                        }
-                        $count = $this->get_formatted_count($count,$format);
+                        $youtube_count = $apsc_settings['social_profile']['youtube']['subscribers_count'];
+                        $count = $this->get_formatted_count($youtube_count,$format);
                         ?><span class="apsc-count"><?php echo $count; ?></span><span class="apsc-media-type">Subscriber</span></div></a><?php
                             break;
                         case 'soundcloud':

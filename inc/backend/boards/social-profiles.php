@@ -129,6 +129,9 @@
         <!--Youtube-->
         <div class="apsc-option-outer-wrapper">
             <h4><?php _e('Youtube', 'aps-counter') ?></h4>
+            <div class="apsc-extra-note">
+          <p><?php _e('Note: Youtube has recently deprecated its gdata API and updated its API to v3 which needs authentication and complicated mechanism to get the simple count.So we are working on the easier solution.Till then please use the Youtube Subscribers Count for displaying the count in frontend.','aps-counter')?></p>
+        </div>
             <div class="apsc-option-inner-wrapper">
                 <label><?php _e('Display Counter', 'aps-counter') ?></label>
                 <div class="apsc-option-field"><label><input type="checkbox" name="social_profile[youtube][active]" value="1" class="apsc-counter-activation-trigger" <?php if(isset($apsc_settings['social_profile']['youtube']['active'])){?>checked="checked"<?php } ?>/><?php _e('Show/Hide', 'aps-counter'); ?></label></div>
@@ -145,6 +148,13 @@
                     <label><?php _e('Youtube Channel URL', 'aps-counter'); ?></label>
                     <div class="apsc-option-field">
                         <input type="text" name="social_profile[youtube][channel_url]" value="<?php echo $apsc_settings['social_profile']['youtube']['channel_url'];?>"/>
+                        <div class="apsc-option-note"><?php _e('Please enter the youtube channel URL.For example:https://www.youtube.com/user/accesspressthemes', 'aps-counter'); ?></div>
+                    </div>
+                </div>
+                <div class="apsc-option-inner-wrapper">
+                    <label><?php _e('Youtube Subscribers Count', 'aps-counter'); ?></label>
+                    <div class="apsc-option-field">
+                        <input type="text" name="social_profile[youtube][subscribers_count]" value="<?php echo isset($apsc_settings['social_profile']['youtube']['subscribers_count'])?$apsc_settings['social_profile']['youtube']['subscribers_count']:0;?>"/>
                         <div class="apsc-option-note"><?php _e('Please enter the youtube channel URL.For example:https://www.youtube.com/user/accesspressthemes', 'aps-counter'); ?></div>
                     </div>
                 </div>

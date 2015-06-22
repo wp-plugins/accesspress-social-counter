@@ -4,7 +4,7 @@ Tags: social count, social counter, social counters, social media counters, soci
 Donate link: http://accesspressthemes.com/donation/
 Requires at least: 3.8
 Tested up to: 4.2
-Stable tag: 1.1.9
+Stable tag: 1.2.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -125,6 +125,10 @@ Once you install the plugin , you can check some general documentation about how
 5. Backend Cache Settings Section
 
 == Changelog ==
+= 1.2.0 = 
+* Updated Facebook API 
+* Added Youtube Subscribers field for mannual count
+
 = 1.1.9 = 
 * Added some missed text domain
 

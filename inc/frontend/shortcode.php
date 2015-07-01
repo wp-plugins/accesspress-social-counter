@@ -30,7 +30,7 @@ $format = isset($apsc_settings['counter_format'])?$apsc_settings['counter_format
                             } else {
                                 $count = $facebook_count;
                             }
-                            $count = $this->get_formatted_count($count,$format);
+                            $count = ($count!='')?$this->get_formatted_count($count,$format):0;
                             ?><span class="apsc-count"><?php echo $count; ?></span><span class="apsc-media-type">Fans</span></div></a>
                             <?php
                             break;
@@ -45,7 +45,7 @@ $format = isset($apsc_settings['counter_format'])?$apsc_settings['counter_format
                         } else {
                             $count = $twitter_count;
                         }
-                        $count = $this->get_formatted_count($count,$format);
+                        $count = ($count!='')?$this->get_formatted_count($count,$format):0;
                         ?><span class="apsc-count"><?php echo $count; ?></span><span class="apsc-media-type">Followers</span></div></a><?php
                         break;
                     case 'googlePlus':
@@ -77,7 +77,7 @@ $format = isset($apsc_settings['counter_format'])?$apsc_settings['counter_format
                             } else {
                                 $count = $googlePlus_count;
                             }
-                            $count = $this->get_formatted_count($count,$format);
+                            $count = ($count!='')?$this->get_formatted_count($count,$format):0;
                             ?><span class="apsc-count"><?php echo $count; ?></span><span class="apsc-media-type">Followers</span></div></a><?php
                             break;
                         case 'instagram':
@@ -113,7 +113,7 @@ $format = isset($apsc_settings['counter_format'])?$apsc_settings['counter_format
                             } else {
                                 $count = $instagram_count;
                             }
-                            $count = $this->get_formatted_count($count,$format);
+                            $count = ($count!='')?$this->get_formatted_count($count,$format):0;
                             ?>
                             <span class="apsc-count"><?php echo $count; ?></span><span class="apsc-media-type">Followers</span></div></a>
                             <?php
@@ -124,7 +124,7 @@ $format = isset($apsc_settings['counter_format'])?$apsc_settings['counter_format
                         <a class="apsc-youtube-icon clearfix" href="<?php echo $social_profile_url; ?>" target="_blank"><div class="apsc-inner-block"><span class="social-icon"><i class="apsc-youtube fa fa-youtube"></i><span class="media-name">Youtube</span></span>
                         <?php
                         $youtube_count = $apsc_settings['social_profile']['youtube']['subscribers_count'];
-                        $count = $this->get_formatted_count($youtube_count,$format);
+                        $count = ($count!='')?$this->get_formatted_count($youtube_count,$format):0;
                         ?><span class="apsc-count"><?php echo $count; ?></span><span class="apsc-media-type">Subscriber</span></div></a><?php
                             break;
                         case 'soundcloud':
@@ -157,7 +157,7 @@ $format = isset($apsc_settings['counter_format'])?$apsc_settings['counter_format
                             } else {
                                 $count = $soundcloud_count;
                             }
-                            $count = $this->get_formatted_count($count,$format);
+                            $count = ($count!='')?$this->get_formatted_count($count,$format):0;
                             ?><span class="apsc-count"><?php echo $count; ?></span><span class="apsc-media-type">Followers</span></div></a><?php
                             break;
                         case 'dribbble':
@@ -188,7 +188,8 @@ $format = isset($apsc_settings['counter_format'])?$apsc_settings['counter_format
                             } else {
                                 $count = $dribbble_count;
                             }
-                            $count = $this->get_formatted_count($count,$format);
+                            
+                            $count = ($count!='')?$this->get_formatted_count($count,$format):0;
                             ?><span class="apsc-count"><?php echo $count; ?></span><span class="apsc-media-type">Followers</span></div></a><?php
                             break;
                         case 'posts':
@@ -203,7 +204,7 @@ $format = isset($apsc_settings['counter_format'])?$apsc_settings['counter_format
                             } else {
                                 $count = $posts_count;
                             }
-                            $count = $this->get_formatted_count($count,$format);
+                            $count = ($count!='')?$this->get_formatted_count($count,$format):0;
                             ?><span class="apsc-count"><?php echo $count; ?></span><span class="apsc-media-type">Post</span></div></a><?php
                             break;
                         case 'comments':
@@ -218,7 +219,7 @@ $format = isset($apsc_settings['counter_format'])?$apsc_settings['counter_format
                             } else {
                                 $count = $comments_count;
                             }
-                            $count = $this->get_formatted_count($count,$format);
+                            $count = ($count!='')?$this->get_formatted_count($count,$format):0;
                             ?><span class="apsc-count"><?php echo $count; ?></span><span class="apsc-media-type">Comments</span></div></a><?php
                             break;
                         default:

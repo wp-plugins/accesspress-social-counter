@@ -3,7 +3,7 @@
  * Plugin Name: AccessPress Social Counter
  * Plugin URI: https://accesspressthemes.com/wordpress-plugins/accesspress-social-counter/
  * Description: A plugin to display your social accounts fans, subscribers and followers number on your website with handful of backend settings and interface. 
- * Version: 1.2.0
+ * Version: 1.3.0
  * Author: AccessPress Themes
  * Author URI: http://accesspressthemes.com
  * Text Domain: aps-counter
@@ -24,7 +24,7 @@ if (!defined('SC_CSS_DIR')) {
     define('SC_CSS_DIR', plugin_dir_url(__FILE__) . 'css');
 }
 if (!defined('SC_VERSION')) {
-    define('SC_VERSION', '1.2.0');
+    define('SC_VERSION', '1.3.0');
 }
 /**
  * Register of widgets
@@ -51,6 +51,7 @@ if (!class_exists('SC_Class')) {
             add_action('admin_post_apsc_restore_default', array($this, 'apsc_restore_default')); //restores default settings;
             add_action('widgets_init', array($this, 'register_apsc_widget')); //registers the widget
             add_shortcode('aps-counter', array($this, 'apsc_shortcode')); //adds a shortcode
+            add_shortcode('aps-get-count',array($this,'apsc_count_shortcode')); //
             add_action('admin_post_apsc_delete_cache', array($this, 'apsc_delete_cache')); //deletes the counter values from cache
         }
 
@@ -367,6 +368,204 @@ if (!class_exists('SC_Class')) {
             return $response[0]->like_count;
          
         }
+        
+        function get_count($social_media){
+            $count = 0;
+            $apsc_settings = $this->apsc_settings;
+            switch($social_media){
+                case 'facebook':
+                        $facebook_page_id = $apsc_settings['social_profile']['facebook']['page_id'];
+                        $facebook_count = get_transient('apsc_facebook');
+                            if (false === $facebook_count) {
+
+                                $api_url = 'https://www.facebook.com/' . $facebook_page_id;
+                                
+                                    $count = $this->facebook_count($api_url);
+                                    set_transient('apsc_facebook', $count, $cache_period);
+                                
+                            } else {
+                                $count = $facebook_count;
+                            }
+                            
+                            
+                            break;
+                        case 'twitter':
+                            
+                        $twitter_count = get_transient('apsc_twitter');
+                        if (false === $twitter_count) {
+                            $count = ($this->get_twitter_count());
+                            set_transient('apsc_twitter', $count, $cache_period);
+                        } else {
+                            $count = $twitter_count;
+                        }
+                        
+                        
+                        break;
+                    case 'googlePlus':
+                        $social_profile_url = 'https://plus.google.com/' . $apsc_settings['social_profile']['googlePlus']['page_id'];
+                        
+                            $googlePlus_count = get_transient('apsc_googlePlus');
+                            if (false === $googlePlus_count) {
+                                $api_url = 'https://www.googleapis.com/plus/v1/people/' . $apsc_settings['social_profile']['googlePlus']['page_id'] . '?key=' . $apsc_settings['social_profile']['googlePlus']['api_key'];
+                                $params = array(
+                                    'sslverify' => false,
+                                    'timeout' => 60
+                                );
+                                $connection = wp_remote_get($api_url, $params);
+                                
+                                if (is_wp_error($connection)) {
+                                    $count = 0;
+                                } else {
+                                    $_data = json_decode($connection['body'], true);
+
+                                    if (isset($_data['circledByCount'])) {
+                                        $count = (intval($_data['circledByCount']));
+                                        set_transient('apsc_googlePlus', $count,$cache_period);
+                                    } else {
+                                        $count = 0;
+                                    }
+                                }
+                            } else {
+                                $count = $googlePlus_count;
+                            }
+                            
+                            break;
+                        case 'instagram':
+                            $username = $apsc_settings['social_profile']['instagram']['username'];
+                            $user_id = $apsc_settings['social_profile']['instagram']['user_id'];
+                            $social_profile_url = 'https://instagram.com/' . $username;
+                            
+                            $instagram_count = get_transient('apsc_instagram');
+                            if (false === $instagram_count) {
+                                $access_token = $apsc_settings['social_profile']['instagram']['access_token'];
+
+                                $api_url = 'https://api.instagram.com/v1/users/' . $user_id . '?access_token=' . $access_token;
+                                $params = array(
+                                    'sslverify' => false,
+                                    'timeout' => 60
+                                );
+                                $connection = wp_remote_get($api_url, $params);
+                                if (is_wp_error($connection)) {
+                                    $count = 0;
+                                } else {
+                                    $response = json_decode($connection['body'], true);
+                                    if (
+                                            isset($response['meta']['code']) && 200 == $response['meta']['code'] && isset($response['data']['counts']['followed_by'])
+                                    ) {
+                                        $count = (intval($response['data']['counts']['followed_by']));
+                                        set_transient('apsc_instagram',$count,$cache_period);
+                                    } else {
+                                        $count = 0;
+                                    }
+                                }
+                            } else {
+                                $count = $instagram_count;
+                            }
+                            
+                            break;
+                        case 'youtube':
+                            $social_profile_url = esc_url($apsc_settings['social_profile']['youtube']['channel_url']);
+                            $count = $apsc_settings['social_profile']['youtube']['subscribers_count'];
+                        
+                            break;
+                        case 'soundcloud':
+                            $username = $apsc_settings['social_profile']['soundcloud']['username'];
+                            $social_profile_url = 'https://soundcloud.com/' . $username;
+                            
+                            $soundcloud_count = get_transient('apsc_soundcloud');
+                            if (false === $soundcloud_count) {
+                                $api_url = 'https://api.soundcloud.com/users/' . $username . '.json?client_id=' . $apsc_settings['social_profile']['soundcloud']['client_id'];
+                                $params = array(
+                                    'sslverify' => false,
+                                    'timeout' => 60
+                                );
+
+                                $connection = wp_remote_get($api_url, $params);
+                                if (is_wp_error($connection)) {
+                                    $count = 0;
+                                } else {
+                                    $response = json_decode($connection['body'], true);
+
+                                    if (isset($response['followers_count'])) {
+                                        $count = (intval($response['followers_count']));
+                                        set_transient( 'apsc_soundcloud',$count,$cache_period );
+                                    } else {
+                                        $count = 0;
+                                    }
+                                }
+                            } else {
+                                $count = $soundcloud_count;
+                            }
+                            
+                            break;
+                        case 'dribbble':
+                            $social_profile_url = 'http://dribbble.com/'.$apsc_settings['social_profile']['dribbble']['username'];
+                            
+                            $dribbble_count = get_transient('apsc_dribbble');
+                            if (false === $dribbble_count) {
+                                $username = $apsc_settings['social_profile']['dribbble']['username'];
+                                 $api_url = 'http://api.dribbble.com/' . $username;
+                                $params = array(
+                                    'sslverify' => false,
+                                    'timeout' => 60
+                                );
+                                $connection = wp_remote_get($api_url, $params);
+                                if (is_wp_error($connection)) {
+                                    $count = 0;
+                                } else {
+                                    $response = json_decode($connection['body'], true);
+                                    if (isset($response['followers_count'])) {
+                                        $count = (intval($response['followers_count']));
+                                        set_transient('apsc_dribbble',$count,$cache_period );
+                                    } else {
+                                        $count = 0;
+                                    }
+                                }
+                            } else {
+                                $count = $dribbble_count;
+                            }
+                            
+                            break;
+                        case 'posts':
+                            
+                            $posts_count = get_transient('apsc_posts');
+                            if (false === $posts_count) {
+                                $posts_count = wp_count_posts();
+                                $count = $posts_count->publish;
+                                set_transient('apsc_posts', $count, $cache_period);
+                            } else {
+                                $count = $posts_count;
+                            }
+                            
+                            break;
+                        case 'comments':
+                            
+                            $comments_count = get_transient('apsc_comments');
+                            if (false === $comments_count) {
+                                $data = wp_count_comments();
+                                $count = ($data->approved);
+                                set_transient('apsc_comments', $count, $cache_period);
+                            } else {
+                                $count = $comments_count;
+                            }
+                            
+                            break;
+                        default:
+                            break;
+            }
+            return $count;
+        }
+        
+        /**
+         * 
+         * Counter Only Shortcode
+         * */
+         function apsc_count_shortcode($atts){
+            if(isset($atts['social_media'])){
+                $count = $this->get_count($atts['social_media']);
+                return $count;
+            }
+         }
 
 
     }

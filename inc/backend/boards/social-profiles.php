@@ -13,9 +13,11 @@
                     <div class="apsc-option-field">
                         <input type="text" name="social_profile[facebook][page_id]" value="<?php echo $apsc_settings['social_profile']['facebook']['page_id'];?>"/>
                         <div class="apsc-option-note"><?php _e('Please enter the page ID or page name.For example:If your page url is https://www.facebook.com/AccessPressThemes then your page ID is AccessPressThemes.You can also find your Facebook Page ID from <a href="http://findmyfacebookid.com/" target="_blank">http://findmyfacebookid.com/</a>', 'aps-counter'); ?></div>
+                        
                     </div>
                 </div>
             </div>
+            <div class="apsc-extra-note"><?php _e('Please use: [aps-get-count social_media="facebook"] to get the Facebook Count only');?></div>
         </div>
         <!---Facebook-->
         
@@ -64,6 +66,7 @@
                 </div>
 
             </div>
+            <div class="apsc-extra-note"><?php _e('Please use: [aps-get-count social_media="twitter"] to get the Twitter Count only');?></div>
         </div>
         <!--Twitter-->
         
@@ -90,6 +93,7 @@
                     </div>
                 </div>
             </div>
+            <div class="apsc-extra-note"><?php _e('Please use: [aps-get-count social_media="googlePlus"] to get the Google Plus Count only');?></div>
         </div>
         <!--Google Plus-->
         
@@ -123,6 +127,7 @@
                     </div>
                 </div>
             </div>
+            <div class="apsc-extra-note"><?php _e('Please use: [aps-get-count social_media="instagram"] to get the Instagram Count only');?></div>
         </div>
         <!--Instagram-->
         
@@ -159,6 +164,7 @@
                     </div>
                 </div>
             </div>
+            <div class="apsc-extra-note"><?php _e('Please use: [aps-get-count social_media="youtube"] to get the Youtube Count only');?></div>
         </div>
         <!--Youtube-->
         
@@ -185,6 +191,7 @@
                     </div>
                 </div>
             </div>
+            <div class="apsc-extra-note"><?php _e('Please use: [aps-get-count social_media="soundcloud"] to get the SoundCloud Count only');?></div>
         </div>
         <!--Sound Cloud-->
         
@@ -204,6 +211,7 @@
                     </div>
                 </div>
             </div>
+            <div class="apsc-extra-note"><?php _e('Please use: [aps-get-count social_media="dribbble"] to get the Dribbble Count only');?></div>
         </div>
         <!--Dribbble-->
         
@@ -214,6 +222,7 @@
                 <label><?php _e('Display Counter','aps-counter');?></label>
                 <div class="apsc-option-field"><label><input type="checkbox" name="social_profile[posts][active]" value="1" class="apsc-counter-activation-trigger" <?php if(isset($apsc_settings['social_profile']['posts']['active'])){?>checked="checked"<?php } ?>/><?php _e('Show/Hide', 'aps-counter'); ?></label></div>
             </div>
+            <div class="apsc-extra-note"><?php _e('Please use: [aps-get-count social_media="posts"] to get the Posts Count only');?></div>
         </div>
         <!--Posts-->
         
@@ -224,6 +233,7 @@
                 <label><?php _e('Display Counter','aps-counter');?></label>
                 <div class="apsc-option-field"><label><input type="checkbox" name="social_profile[comments][active]" value="1" class="apsc-counter-activation-trigger" <?php if(isset($apsc_settings['social_profile']['comments']['active'])){?>checked="checked"<?php } ?>/><?php _e('Show/Hide', 'aps-counter'); ?></label></div>
             </div>
+            <div class="apsc-extra-note"><?php _e('Please use: [aps-get-count social_media="comments"] to get the Comments Count only');?></div>
         </div>
         <!--Comments-->
         

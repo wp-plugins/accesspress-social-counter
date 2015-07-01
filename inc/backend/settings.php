@@ -34,6 +34,8 @@ $apsc_settings = $this->apsc_settings;
 
                 <div class="apsc-title"><?php _e('AccessPress Social Counter', 'aps-counter'); ?></div>
             </div>
+            <div class="apsc-extra-note"><?php _e('Note: If you find any unsual issues then please check by deleting cache using the "Delete Cache" button below.And if you found our plugin helpful and like our plugin then please don\'t forget to give us a rating <a href="https://wordpress.org/plugins/accesspress-social-counter">here</a>.Its the only way to keep us motivated to make the plugin even better.
+','aps-counter');?></div>
             <?php if(isset($_SESSION['apsc_message'])){?><div class="apsc-success-message"><p><?php echo $_SESSION['apsc_message'];unset($_SESSION['apsc_message']);?></p></div><?php }?>
             <div class="apsc-boards-wrapper">
                 <ul class="apsc-settings-tabs">

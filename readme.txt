@@ -126,7 +126,7 @@ Once you install the plugin , you can check some general documentation about how
 
 == Changelog ==
 = 1.3.0 = 
-* Added Shortcode [aps-get-count social_media="facebook/twitter/googlePlus/instagram/youtube/soundcloud/dribbble/posts/comments"] to get the individual social media count only 
+* Added Shortcode [aps-get-count social_media="name of social media"] to get the individual social media count only 
 
 = 1.2.0 = 
 * Updated Facebook API 

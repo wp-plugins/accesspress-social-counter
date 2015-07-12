@@ -30,7 +30,13 @@ $format = isset($apsc_settings['counter_format'])?$apsc_settings['counter_format
                             } else {
                                 $count = $facebook_count;
                             }
+                            $default_count = isset($apsc_settings['social_profile']['facebook']['default_count'])?$apsc_settings['social_profile']['facebook']['default_count']:0;
+                            $count = ($count==0)?$default_count:$count;
+                            if($count!=0 || $count!=''){
+                                set_transient('apsc_facebook',$count,$cache_period);
+                            }
                             $count = ($count!='')?$this->get_formatted_count($count,$format):0;
+                            
                             ?><span class="apsc-count"><?php echo $count; ?></span><span class="apsc-media-type">Fans</span></div></a>
                             <?php
                             break;

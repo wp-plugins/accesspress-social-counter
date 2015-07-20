@@ -168,7 +168,7 @@
                     <label><?php _e('Youtube Subscribers Count', 'aps-counter'); ?></label>
                     <div class="apsc-option-field">
                         <input type="text" name="social_profile[youtube][subscribers_count]" value="<?php echo isset($apsc_settings['social_profile']['youtube']['subscribers_count'])?$apsc_settings['social_profile']['youtube']['subscribers_count']:0;?>"/>
-                        <div class="apsc-option-note"><?php _e('Please enter the youtube channel URL.For example:https://www.youtube.com/user/accesspressthemes', 'aps-counter'); ?></div>
+                        <div class="apsc-option-note"><?php _e('Please enter total number of subscribers that your youtube channel has.', 'aps-counter'); ?></div>
                     </div>
                 </div>
             </div>

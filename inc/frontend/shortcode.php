@@ -130,7 +130,7 @@ $format = isset($apsc_settings['counter_format'])?$apsc_settings['counter_format
                         <a class="apsc-youtube-icon clearfix" href="<?php echo $social_profile_url; ?>" target="_blank"><div class="apsc-inner-block"><span class="social-icon"><i class="apsc-youtube fa fa-youtube"></i><span class="media-name">Youtube</span></span>
                         <?php
                         $youtube_count = $apsc_settings['social_profile']['youtube']['subscribers_count'];
-                        $count = ($count!='')?$this->get_formatted_count($youtube_count,$format):0;
+                        $count = ($youtube_count!='')?$this->get_formatted_count($youtube_count,$format):0;
                         ?><span class="apsc-count"><?php echo $count; ?></span><span class="apsc-media-type">Subscriber</span></div></a><?php
                             break;
                         case 'soundcloud':

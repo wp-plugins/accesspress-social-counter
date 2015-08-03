@@ -3,7 +3,7 @@
  * Plugin Name: AccessPress Social Counter
  * Plugin URI: https://accesspressthemes.com/wordpress-plugins/accesspress-social-counter/
  * Description: A plugin to display your social accounts fans, subscribers and followers number on your website with handful of backend settings and interface. 
- * Version: 1.3.4
+ * Version: 1.3.5
  * Author: AccessPress Themes
  * Author URI: http://accesspressthemes.com
  * Text Domain: aps-counter
@@ -24,7 +24,7 @@ if (!defined('SC_CSS_DIR')) {
     define('SC_CSS_DIR', plugin_dir_url(__FILE__) . 'css');
 }
 if (!defined('SC_VERSION')) {
-    define('SC_VERSION', '1.3.4');
+    define('SC_VERSION', '1.3.5');
 }
 /**
  * Register of widgets
@@ -95,15 +95,15 @@ if (!class_exists('SC_Class')) {
                 wp_enqueue_script('sc-admin-js', SC_JS_DIR . '/backend.js', array('jquery', 'jquery-ui-sortable'), SC_VERSION);
             }
 
-            wp_enqueue_style('fontawesome-css', SC_CSS_DIR . '/font-awesome/font-awesome.min.css',false,SC_VERSION);
+            wp_enqueue_style('fontawesome-css', 'https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css',false,SC_VERSION);
         }
 
         /**
          * Registers Frontend Assets
          * */
         function register_frontend_assets() {
-            wp_enqueue_style('apsc-font-awesome',SC_CSS_DIR.'/font-awesome/font-awesome.css',array(),SC_VERSION);
-            wp_enqueue_style('apsc-frontend-css', SC_CSS_DIR . '/frontend.css', array('apsc-font-awesome'), SC_VERSION);
+            wp_enqueue_style('apsc-font-awesome','https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css',array(),SC_VERSION);
+            wp_enqueue_style('apsc-frontend-css', SC_CSS_DIR . '/frontend.css', array(), SC_VERSION);
         }
 
         /**

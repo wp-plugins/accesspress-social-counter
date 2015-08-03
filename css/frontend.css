@@ -36,6 +36,12 @@
 
 .apsc-each-profile a{
 	font-weight:normal;
+    color:white !important;
+    text-decoration:none;
+}
+.apsc-each-profile a:hover{
+	color:white !important;
+    text-decoration:none !important;
 }
 
 .apsc-theme-1 .apsc-each-profile a{

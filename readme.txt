@@ -3,8 +3,8 @@ Contributors: Access Keys
 Tags: social count, social counter, social counters, social media counters, social media, social network, social profiles counter, social profile count, social profile, social icons, social icon counter
 Donate link: http://accesspressthemes.com/donation/
 Requires at least: 3.8
-Tested up to: 4.2
-Stable tag: 1.3.5
+Tested up to: 4.3
+Stable tag: 1.3.6
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -125,6 +125,10 @@ Once you install the plugin , you can check some general documentation about how
 5. Backend Cache Settings Section
 
 == Changelog ==
+= 1.3.6 = 
+* Updated note in social profiles section
+* Updated rating link in settings header 
+
 = 1.3.5 = 
 * Removed font awesome dependency from frontend.css
 * Fixed some css conflicts for anchor links color and hover color

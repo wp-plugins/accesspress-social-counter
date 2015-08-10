@@ -3,6 +3,7 @@ defined('ABSPATH') or die("No script kiddies please!");
 
 $apsc_settings = $this->apsc_settings;
 $cache_period = ($apsc_settings['cache_period'] != '') ? $apsc_settings['cache_period']*60*60 : 24 * 60 * 60;
+
 $apsc_settings['social_profile_theme'] = isset($atts['theme'])?$atts['theme']:$apsc_settings['social_profile_theme']; 
 $format = isset($apsc_settings['counter_format'])?$apsc_settings['counter_format']:'comma';
 ?>
@@ -21,7 +22,7 @@ $format = isset($apsc_settings['counter_format'])?$apsc_settings['counter_format
                             <?php
                             $facebook_count = get_transient('apsc_facebook');
                             if (false === $facebook_count) {
-
+                                
                                 $api_url = 'https://www.facebook.com/' . $facebook_page_id;
                                 
                                     $count = $this->facebook_count($api_url);

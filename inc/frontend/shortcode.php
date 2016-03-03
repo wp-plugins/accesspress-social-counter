@@ -18,7 +18,7 @@ $format = isset($apsc_settings['counter_format'])?$apsc_settings['counter_format
                     case 'facebook':
                         $facebook_page_id = $apsc_settings['social_profile']['facebook']['page_id'];
                         ?>
-                <a  class="apsc-facebook-icon clearfix" href="<?php echo "http://facebook.com/" . $facebook_page_id; ?>" target="_blank"><div class="apsc-inner-block"><span class="social-icon"><i class="fa fa-facebook apsc-facebook"></i><span class="media-name">Facebook</span></span>
+                <a  class="apsc-facebook-icon clearfix" href="<?php echo "http://facebook.com/" . $facebook_page_id; ?>" target="_blank"><div class="apsc-inner-block"><span class="social-icon"><i class="fa fa-facebook apsc-facebook"></i><span class="media-name"><?php _e( 'Facebook', 'accesspress-social-counter' ); ?></span></span>
                             <?php
                             $facebook_count = get_transient('apsc_facebook');
                             if (false === $facebook_count) {
@@ -38,12 +38,12 @@ $format = isset($apsc_settings['counter_format'])?$apsc_settings['counter_format
                             }
                             $count = ($count!='')?$this->get_formatted_count($count,$format):0;
                             
-                            ?><span class="apsc-count"><?php echo $count; ?></span><span class="apsc-media-type">Fans</span></div></a>
+                            ?><span class="apsc-count"><?php echo $count; ?></span><span class="apsc-media-type"><?php _e( 'Fans', 'accesspress-social-counter' ); ?></span></div></a>
                             <?php
                             break;
                         case 'twitter':
                             ?>
-                <a  class="apsc-twitter-icon clearfix"  href="<?php echo 'http://twitter.com/'.$apsc_settings['social_profile']['twitter']['username'];?>" target="_blank"><div class="apsc-inner-block"><span class="social-icon"><i class="fa fa-twitter apsc-twitter"></i><span class="media-name">Twitter</span></span>
+                <a  class="apsc-twitter-icon clearfix"  href="<?php echo 'http://twitter.com/'.$apsc_settings['social_profile']['twitter']['username'];?>" target="_blank"><div class="apsc-inner-block"><span class="social-icon"><i class="fa fa-twitter apsc-twitter"></i><span class="media-name"><?php _e( 'Twitter', 'accesspress-social-counter' ); ?></span></span>
                         <?php
                         $twitter_count = get_transient('apsc_twitter');
                         if (false === $twitter_count) {
@@ -53,12 +53,12 @@ $format = isset($apsc_settings['counter_format'])?$apsc_settings['counter_format
                             $count = $twitter_count;
                         }
                         $count = ($count!='')?$this->get_formatted_count($count,$format):0;
-                        ?><span class="apsc-count"><?php echo $count; ?></span><span class="apsc-media-type">Followers</span></div></a><?php
+                        ?><span class="apsc-count"><?php echo $count; ?></span><span class="apsc-media-type"><?php _e( 'Followers', 'accesspress-social-counter' ); ?></span></div></a><?php
                         break;
                     case 'googlePlus':
                         $social_profile_url = 'https://plus.google.com/' . $apsc_settings['social_profile']['googlePlus']['page_id'];
                         ?>
-                        <a  class="apsc-google-plus-icon clearfix" href="<?php echo $social_profile_url; ?>" target="_blank"><div class="apsc-inner-block"><span class="social-icon"><i class="apsc-googlePlus fa fa-google-plus"></i><span class="media-name">google+</span></span>
+                        <a  class="apsc-google-plus-icon clearfix" href="<?php echo $social_profile_url; ?>" target="_blank"><div class="apsc-inner-block"><span class="social-icon"><i class="apsc-googlePlus fa fa-google-plus"></i><span class="media-name"><?php _e( 'google+', 'accesspress-social-counter' ); ?></span></span>
                             <?php
                             $googlePlus_count = get_transient('apsc_googlePlus');
                             if (false === $googlePlus_count) {
@@ -85,14 +85,14 @@ $format = isset($apsc_settings['counter_format'])?$apsc_settings['counter_format
                                 $count = $googlePlus_count;
                             }
                             $count = ($count!='')?$this->get_formatted_count($count,$format):0;
-                            ?><span class="apsc-count"><?php echo $count; ?></span><span class="apsc-media-type">Followers</span></div></a><?php
+                            ?><span class="apsc-count"><?php echo $count; ?></span><span class="apsc-media-type"><?php _e( 'Followers', 'accesspress-social-counter' ); ?></span></div></a><?php
                             break;
                         case 'instagram':
                             $username = $apsc_settings['social_profile']['instagram']['username'];
                             $user_id = $apsc_settings['social_profile']['instagram']['user_id'];
                             $social_profile_url = 'https://instagram.com/' . $username;
                             ?>
-                        <a  class="apsc-instagram-icon clearfix" href="<?php echo $social_profile_url; ?>" target="_blank"><div class="apsc-inner-block"><span class="social-icon"><i class="apsc-instagram fa fa-instagram"></i><span class="media-name">Instagram</span></span>
+                        <a  class="apsc-instagram-icon clearfix" href="<?php echo $social_profile_url; ?>" target="_blank"><div class="apsc-inner-block"><span class="social-icon"><i class="apsc-instagram fa fa-instagram"></i><span class="media-name"><?php _e( 'Instagram', 'accesspress-social-counter' ); ?></span></span>
                             <?php
                             $instagram_count = get_transient('apsc_instagram');
                             if (false === $instagram_count) {
@@ -122,23 +122,23 @@ $format = isset($apsc_settings['counter_format'])?$apsc_settings['counter_format
                             }
                             $count = ($count!='')?$this->get_formatted_count($count,$format):0;
                             ?>
-                            <span class="apsc-count"><?php echo $count; ?></span><span class="apsc-media-type">Followers</span></div></a>
+                            <span class="apsc-count"><?php echo $count; ?></span><span class="apsc-media-type"><?php _e( 'Followers', 'accesspress-social-counter' ); ?></span></div></a>
                             <?php
                             break;
                         case 'youtube':
                             $social_profile_url = esc_url($apsc_settings['social_profile']['youtube']['channel_url']);
                             ?>
-                        <a class="apsc-youtube-icon clearfix" href="<?php echo $social_profile_url; ?>" target="_blank"><div class="apsc-inner-block"><span class="social-icon"><i class="apsc-youtube fa fa-youtube"></i><span class="media-name">Youtube</span></span>
+                        <a class="apsc-youtube-icon clearfix" href="<?php echo $social_profile_url; ?>" target="_blank"><div class="apsc-inner-block"><span class="social-icon"><i class="apsc-youtube fa fa-youtube"></i><span class="media-name"><?php _e( 'Youtube', 'accesspress-social-counter' ); ?></span></span>
                         <?php
                         $youtube_count = $apsc_settings['social_profile']['youtube']['subscribers_count'];
                         $count = ($youtube_count!='')?$this->get_formatted_count($youtube_count,$format):0;
-                        ?><span class="apsc-count"><?php echo $count; ?></span><span class="apsc-media-type">Subscriber</span></div></a><?php
+                        ?><span class="apsc-count"><?php echo $count; ?></span><span class="apsc-media-type"><?php _e( 'Subscriber', 'accesspress-social-counter' ); ?></span></div></a><?php
                             break;
                         case 'soundcloud':
                             $username = $apsc_settings['social_profile']['soundcloud']['username'];
                             $social_profile_url = 'https://soundcloud.com/' . $username;
                             ?>
-                        <a class="apsc-soundcloud-icon clearfix" href="<?php echo $social_profile_url; ?>" target="_blank"><div class="apsc-inner-block"><span class="social-icon"><i class="apsc-soundcloud fa fa-soundcloud"></i><span class="media-name">Soundcloud</span></span>
+                        <a class="apsc-soundcloud-icon clearfix" href="<?php echo $social_profile_url; ?>" target="_blank"><div class="apsc-inner-block"><span class="social-icon"><i class="apsc-soundcloud fa fa-soundcloud"></i><span class="media-name"><?php _e( 'Soundcloud', 'accesspress-social-counter' ); ?></span></span>
                             <?php
                             $soundcloud_count = get_transient('apsc_soundcloud');
                             if (false === $soundcloud_count) {
@@ -165,12 +165,12 @@ $format = isset($apsc_settings['counter_format'])?$apsc_settings['counter_format
                                 $count = $soundcloud_count;
                             }
                             $count = ($count!='')?$this->get_formatted_count($count,$format):0;
-                            ?><span class="apsc-count"><?php echo $count; ?></span><span class="apsc-media-type">Followers</span></div></a><?php
+                            ?><span class="apsc-count"><?php echo $count; ?></span><span class="apsc-media-type"><?php _e( 'Followers', 'accesspress-social-counter' ); ?></span></div></a><?php
                             break;
                         case 'dribbble':
                             $social_profile_url = 'http://dribbble.com/'.$apsc_settings['social_profile']['dribbble']['username'];
                             ?>
-                        <a class="apsc-dribble-icon clearfix" href="<?php echo $social_profile_url; ?>" target="_blank"><div class="apsc-inner-block"><span class="social-icon"><i class="apsc-dribbble fa fa-dribbble"></i><span class="media-name">dribble</span></span>
+                        <a class="apsc-dribble-icon clearfix" href="<?php echo $social_profile_url; ?>" target="_blank"><div class="apsc-inner-block"><span class="social-icon"><i class="apsc-dribbble fa fa-dribbble"></i><span class="media-name"><?php _e( 'dribble', 'accesspress-social-counter' ); ?></span></span>
                             <?php
                             $dribbble_count = get_transient('apsc_dribbble');
                             if (false === $dribbble_count) {
@@ -197,11 +197,11 @@ $format = isset($apsc_settings['counter_format'])?$apsc_settings['counter_format
                             }
                             
                             $count = ($count!='')?$this->get_formatted_count($count,$format):0;
-                            ?><span class="apsc-count"><?php echo $count; ?></span><span class="apsc-media-type">Followers</span></div></a><?php
+                            ?><span class="apsc-count"><?php echo $count; ?></span><span class="apsc-media-type"><?php _e( 'Followers', 'accesspress-social-counter' ); ?></span></div></a><?php
                             break;
                         case 'posts':
                             ?>
-                        <a class="apsc-edit-icon clearfix" href="javascript:void(0);"><div class="apsc-inner-block"><span class="social-icon"><i class="apsc-posts fa fa-edit"></i><span class="media-name">Post</span></span>
+                        <a class="apsc-edit-icon clearfix" href="javascript:void(0);"><div class="apsc-inner-block"><span class="social-icon"><i class="apsc-posts fa fa-edit"></i><span class="media-name"><?php _e( 'Post', 'accesspress-social-counter' ); ?></span></span>
                             <?php
                             $posts_count = get_transient('apsc_posts');
                             if (false === $posts_count) {
@@ -212,11 +212,11 @@ $format = isset($apsc_settings['counter_format'])?$apsc_settings['counter_format
                                 $count = $posts_count;
                             }
                             $count = ($count!='')?$this->get_formatted_count($count,$format):0;
-                            ?><span class="apsc-count"><?php echo $count; ?></span><span class="apsc-media-type">Post</span></div></a><?php
+                            ?><span class="apsc-count"><?php echo $count; ?></span><span class="apsc-media-type"><?php _e( 'Post', 'accesspress-social-counter' ); ?></span></div></a><?php
                             break;
                         case 'comments':
                             ?>
-                        <a class="apsc-comment-icon clearfix" href="javascript:void(0);"><div class="apsc-inner-block"><span class="social-icon"><i class="apsc-comments fa fa-comments"></i><span class="media-name">Comment</span></span>
+                        <a class="apsc-comment-icon clearfix" href="javascript:void(0);"><div class="apsc-inner-block"><span class="social-icon"><i class="apsc-comments fa fa-comments"></i><span class="media-name"><?php _e( 'Comment', 'accesspress-social-counter' ); ?></span></span>
                             <?php
                             $comments_count = get_transient('apsc_comments');
                             if (false === $comments_count) {
@@ -227,7 +227,7 @@ $format = isset($apsc_settings['counter_format'])?$apsc_settings['counter_format
                                 $count = $comments_count;
                             }
                             $count = ($count!='')?$this->get_formatted_count($count,$format):0;
-                            ?><span class="apsc-count"><?php echo $count; ?></span><span class="apsc-media-type">Comments</span></div></a><?php
+                            ?><span class="apsc-count"><?php echo $count; ?></span><span class="apsc-media-type"><?php _e( 'Comments', 'accesspress-social-counter' ); ?></span></div></a><?php
                             break;
                         default:
                             break;

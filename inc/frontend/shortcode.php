@@ -18,7 +18,7 @@ $format = isset($apsc_settings['counter_format'])?$apsc_settings['counter_format
                     case 'facebook':
                         $facebook_page_id = $apsc_settings['social_profile']['facebook']['page_id'];
                         ?>
-                <a  class="apsc-facebook-icon clearfix" href="<?php echo "http://facebook.com/" . $facebook_page_id; ?>" target="_blank"><div class="apsc-inner-block"><span class="social-icon"><i class="fa fa-facebook apsc-facebook"></i><span class="media-name">Facebook</span></span>
+                <a  <?php do_action("apsc_onclick", "apsc_analytics_facebook"); ?> class="apsc-facebook-icon clearfix" href="<?php echo "http://facebook.com/" . $facebook_page_id; ?>" target="_blank"><div class="apsc-inner-block"><span class="social-icon"><i class="fa fa-facebook apsc-facebook"></i><span class="media-name">Facebook</span></span>
                             <?php
                             $facebook_count = get_transient('apsc_facebook');
                             if (false === $facebook_count) {
@@ -43,7 +43,7 @@ $format = isset($apsc_settings['counter_format'])?$apsc_settings['counter_format
                             break;
                         case 'twitter':
                             ?>
-                <a  class="apsc-twitter-icon clearfix"  href="<?php echo 'http://twitter.com/'.$apsc_settings['social_profile']['twitter']['username'];?>" target="_blank"><div class="apsc-inner-block"><span class="social-icon"><i class="fa fa-twitter apsc-twitter"></i><span class="media-name">Twitter</span></span>
+                <a  <?php do_action("apsc_onclick", "apsc_analytics_twitter"); ?> class="apsc-twitter-icon clearfix"  href="<?php echo 'http://twitter.com/'.$apsc_settings['social_profile']['twitter']['username'];?>" target="_blank"><div class="apsc-inner-block"><span class="social-icon"><i class="fa fa-twitter apsc-twitter"></i><span class="media-name">Twitter</span></span>
                         <?php
                         $twitter_count = get_transient('apsc_twitter');
                         if (false === $twitter_count) {
@@ -58,7 +58,7 @@ $format = isset($apsc_settings['counter_format'])?$apsc_settings['counter_format
                     case 'googlePlus':
                         $social_profile_url = 'https://plus.google.com/' . $apsc_settings['social_profile']['googlePlus']['page_id'];
                         ?>
-                        <a  class="apsc-google-plus-icon clearfix" href="<?php echo $social_profile_url; ?>" target="_blank"><div class="apsc-inner-block"><span class="social-icon"><i class="apsc-googlePlus fa fa-google-plus"></i><span class="media-name">google+</span></span>
+                        <a  <?php do_action("apsc_onclick", "apsc_analytics_google_plus"); ?> class="apsc-google-plus-icon clearfix" href="<?php echo $social_profile_url; ?>" target="_blank"><div class="apsc-inner-block"><span class="social-icon"><i class="apsc-googlePlus fa fa-google-plus"></i><span class="media-name">google+</span></span>
                             <?php
                             $googlePlus_count = get_transient('apsc_googlePlus');
                             if (false === $googlePlus_count) {
@@ -92,7 +92,7 @@ $format = isset($apsc_settings['counter_format'])?$apsc_settings['counter_format
                             $user_id = $apsc_settings['social_profile']['instagram']['user_id'];
                             $social_profile_url = 'https://instagram.com/' . $username;
                             ?>
-                        <a  class="apsc-instagram-icon clearfix" href="<?php echo $social_profile_url; ?>" target="_blank"><div class="apsc-inner-block"><span class="social-icon"><i class="apsc-instagram fa fa-instagram"></i><span class="media-name">Instagram</span></span>
+                        <a  <?php do_action("apsc_onclick", "apsc_analytics_instagram"); ?> class="apsc-instagram-icon clearfix" href="<?php echo $social_profile_url; ?>" target="_blank"><div class="apsc-inner-block"><span class="social-icon"><i class="apsc-instagram fa fa-instagram"></i><span class="media-name">Instagram</span></span>
                             <?php
                             $instagram_count = get_transient('apsc_instagram');
                             if (false === $instagram_count) {
@@ -128,7 +128,7 @@ $format = isset($apsc_settings['counter_format'])?$apsc_settings['counter_format
                         case 'youtube':
                             $social_profile_url = esc_url($apsc_settings['social_profile']['youtube']['channel_url']);
                             ?>
-                        <a class="apsc-youtube-icon clearfix" href="<?php echo $social_profile_url; ?>" target="_blank"><div class="apsc-inner-block"><span class="social-icon"><i class="apsc-youtube fa fa-youtube"></i><span class="media-name">Youtube</span></span>
+                        <a <?php do_action("apsc_onclick", "apsc_analytics_youtube"); ?> class="apsc-youtube-icon clearfix" href="<?php echo $social_profile_url; ?>" target="_blank"><div class="apsc-inner-block"><span class="social-icon"><i class="apsc-youtube fa fa-youtube"></i><span class="media-name">Youtube</span></span>
                         <?php
                         $youtube_count = $apsc_settings['social_profile']['youtube']['subscribers_count'];
                         $count = ($youtube_count!='')?$this->get_formatted_count($youtube_count,$format):0;
@@ -138,7 +138,7 @@ $format = isset($apsc_settings['counter_format'])?$apsc_settings['counter_format
                             $username = $apsc_settings['social_profile']['soundcloud']['username'];
                             $social_profile_url = 'https://soundcloud.com/' . $username;
                             ?>
-                        <a class="apsc-soundcloud-icon clearfix" href="<?php echo $social_profile_url; ?>" target="_blank"><div class="apsc-inner-block"><span class="social-icon"><i class="apsc-soundcloud fa fa-soundcloud"></i><span class="media-name">Soundcloud</span></span>
+                        <a <?php do_action("apsc_onclick", "apsc_analytics_soundcloud"); ?> class="apsc-soundcloud-icon clearfix" href="<?php echo $social_profile_url; ?>" target="_blank"><div class="apsc-inner-block"><span class="social-icon"><i class="apsc-soundcloud fa fa-soundcloud"></i><span class="media-name">Soundcloud</span></span>
                             <?php
                             $soundcloud_count = get_transient('apsc_soundcloud');
                             if (false === $soundcloud_count) {
@@ -170,7 +170,7 @@ $format = isset($apsc_settings['counter_format'])?$apsc_settings['counter_format
                         case 'dribbble':
                             $social_profile_url = 'http://dribbble.com/'.$apsc_settings['social_profile']['dribbble']['username'];
                             ?>
-                        <a class="apsc-dribble-icon clearfix" href="<?php echo $social_profile_url; ?>" target="_blank"><div class="apsc-inner-block"><span class="social-icon"><i class="apsc-dribbble fa fa-dribbble"></i><span class="media-name">dribble</span></span>
+                        <a <?php do_action("apsc_onclick", "apsc_analytics_dribble"); ?> class="apsc-dribble-icon clearfix" href="<?php echo $social_profile_url; ?>" target="_blank"><div class="apsc-inner-block"><span class="social-icon"><i class="apsc-dribbble fa fa-dribbble"></i><span class="media-name">dribble</span></span>
                             <?php
                             $dribbble_count = get_transient('apsc_dribbble');
                             if (false === $dribbble_count) {
